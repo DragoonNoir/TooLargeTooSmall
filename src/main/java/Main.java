@@ -1,32 +1,37 @@
 /**
  * Created by iyasuwatts on 10/17/17.
  */
+import java.util.Random;
+import java.util.Scanner;
+
 public class Main {
-//learned random comm req. activation command in order to use
-    import java.util.Random;
-//learned scanner comm req. activation command in order to use
-    import java.util.Scanner;
-//
-public static void main(String[] args){
-      //need a loop to run the game
-    for (int i = 0; i < 10; i++) { System.out.printIn("");
-            // need random generator
-        Random rand = new Random();
-        int randomNumber = rand.nextInt(10) + 1;
-        System.out.printIn(" enter guess (1-10)");
-// need IF statement
-       // "too large", "too small", "correct guess",
-    if (userGuess > Random){
-            System.out.printIn("too large");}
-
-        else if (userGuess < Random) {
-            System.out.printIn ("too small");}
-
-        else(userGuess == Random){
-            System.out.printIn ("correct guess");
-        }
-// code a user pick comm
-        Scanner scanner = new Scanner(System.in);
+public static void main(String[] args) {
+    Random rand = new Random();
+    Scanner scanner = new Scanner(System.in);
+//command for player to pick and pc to choose random number
+    int randomNumber = rand.nextInt(25) + 1;
+    System.out.println(" enter guess (1-25):");
+    int tryCount = 0;
+//while loop to keep the game running
+    while (true) {
         int userGuess = scanner.nextInt();
+        System.out.println("Please pick a number (1-25)");
+        tryCount++;
+
+        if (userGuess > randomNumber) {
+            System.out.println("too large");
+        }
+        else if (userGuess < randomNumber) {
+            System.out.println("too small");
+        }
+        else {
+            System.out.println("correct guess");
+            System.out.println("Attempts made" + tryCount);
+            //a break to stop the loop from running after correct guess
+            break;
+        }
     }
+}
+
+
 }
